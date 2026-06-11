@@ -65,7 +65,11 @@ const getNavigationItems = (): NavigationItemType[] => [
 
 const useNavigationItems = () => {
   return useMemo(() => {
-    const items = getNavigationItems();
+    const allItems = getNavigationItems();
+
+    // Kinetec Clean: Filter out unwanted enterprise items
+    const blockedItems = ["workflows", "insights", "routing", "teams", "erkenntnisse", "weiterleitung", "arbeitsabläufe"];
+    const items = allItems.filter(item => !blockedItems.includes(item.name.toLowerCase()));
 
     const desktopNavigationItems = items.filter((item) => item.name !== MORE_SEPARATOR_NAME);
     const mobileNavigationBottomItems = items.filter(

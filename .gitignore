@@ -4,7 +4,10 @@
 .env
 !packages/prisma/.env
 
-# dependencies
+# Gemini
+GEMINI.md
+
+# Dependencies
 node_modules
 .pnp
 .pnp.js
@@ -117,3 +120,5 @@ agents/devin-knowledge.json
 
 # pagefind
 _pagefind/
+
+GEMINI.md

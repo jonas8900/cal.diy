@@ -367,6 +367,9 @@ const useTabs = ({
 
     // check if name is in adminRequiredKeys
     return processedTabs.filter((tab) => {
+      // Kinetec Clean: Hard hide Organization and Admin tabs to keep UI clean for customers
+      if (["organization", "admin"].includes(tab.name)) return false;
+
       if (organizationRequiredKeys.includes(tab.name)) return !!orgBranding;
       if (tab.name === "other_teams" && !permissions?.canUpdateOrganization) return false;
 

@@ -422,3 +422,22 @@ html[dir="rtl"] .react-tel-input .flag-dropdown {
   left: auto !important;
   right: 0 !important;
 }
+
+/* Kinetec Silent Mode - Hide Premium/Upgrade elements */
+[href*="/upgrade"],
+[href*="/enterprise"],
+[data-testid*="upgrade"],
+[data-testid*="premium"],
+.UpgradeBadge,
+.premium-feature-badge,
+a[href*="mailto:sales@cal.com"],
+a[href*="cal.com/enterprise"],
+#org-upgrade-banner {
+  display: none !important;
+}
+
+/* Hide Credits in Sidebar */
+aside small, 
+[data-testid="credits"] {
+  display: none !important;
+}
